@@ -35,10 +35,10 @@ function wgs84togcj02(lng, lat) {
   if (out_of_china(lng, lat)) {
     return [lng, lat];
   } else {
-    const dlat = transformlat(lng - 105.0, lat - 35.0);
-    const dlng = transformlng(lng - 105.0, lat - 35.0);
+    let dlat = transformlat(lng - 105.0, lat - 35.0);
+    let dlng = transformlng(lng - 105.0, lat - 35.0);
     const radlat = (lat / 180.0) * PI;
-    const magic = Math.sin(radlat);
+    let magic = Math.sin(radlat);
     magic = 1 - ee * magic * magic;
     const sqrtmagic = Math.sqrt(magic);
     dlat = (dlat * 180.0) / (((a * (1 - ee)) / (magic * sqrtmagic)) * PI);
@@ -55,10 +55,10 @@ function gcj02towgs84(lng, lat) {
   if (out_of_china(lng, lat)) {
     return [lng, lat];
   } else {
-    const dlat = transformlat(lng - 105.0, lat - 35.0);
-    const dlng = transformlng(lng - 105.0, lat - 35.0);
+    let dlat = transformlat(lng - 105.0, lat - 35.0);
+    let dlng = transformlng(lng - 105.0, lat - 35.0);
     const radlat = (lat / 180.0) * PI;
-    const magic = Math.sin(radlat);
+    let magic = Math.sin(radlat);
     magic = 1 - ee * magic * magic;
     const sqrtmagic = Math.sqrt(magic);
     dlat = (dlat * 180.0) / (((a * (1 - ee)) / (magic * sqrtmagic)) * PI);
