@@ -1,8 +1,7 @@
 const fs = require("fs");
-
-// const rawdata = fs.readFileSync("./src/胶济铁路.json");
-// const rawdata = fs.readFileSync("./src/潍荣高铁-潍莱.json");
-const rawdata = fs.readFileSync("./src/潍荣高铁1.json");
+// ---- logic ----
+const fileName = "路网组成总";
+const rawdata = fs.readFileSync(`./src/${fileName}.json`);
 
 const raw = JSON.parse(rawdata);
 
@@ -11,5 +10,5 @@ const data = JSON.stringify(originData);
 
 console.log("data:", data);
 
-fs.writeFileSync("./export/潍荣高铁1.json", "");
-fs.writeFileSync("./export/潍荣高铁1.json", data);
+fs.writeFileSync(`./export/${fileName}.json`, "");
+fs.writeFileSync(`./export/${fileName}.json`, data);
